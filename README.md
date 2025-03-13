@@ -68,12 +68,16 @@ Things to do after installing fedora workstation
     - Check directory to confirm it is the local git repo (you will see .git)
     - Terminal: ls -la
   
-    - Setup githug and gitlab
+    - Setup github and gitlab
     - generate ssh keygen
     - Terminal: ssh-keygen -C <email@>
     - Note: It will ask to set location and password, press enter to save it on default
     - Copy the generated pub key
     - Terminal: cat ~/.ssh/id_ed*****.pub
-    - Open github 
+    - Open Github > Settings > SSH and GPG Keys > New > Save
+    - Verify the gihub connection
+    - Terminal: ssh -T git@github.com
+    - Prompt: Are you sure you want to continue connecting? yes
+    - Status: You've successfully authenticated, but GitHub does not provide shell access.
 
 7. 
