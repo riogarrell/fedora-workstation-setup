@@ -80,4 +80,47 @@ Things to do after installing fedora workstation
     - Prompt: Are you sure you want to continue connecting? yes
     - Status: You've successfully authenticated, but GitHub does not provide shell access.
 
-7. 
+7. Installing Docker
+    - Adding docker repo
+    - Terminal: sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+    - Install docker
+    - Terminal: sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    - Verify docker
+    - docker --version
+    - Check docker status
+    - Terminal: sudo systemctl status docker
+    - Start docker
+    - Terminal: sudo systemctl start docker
+    - sudo docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit: https://docs.docker.com/get-started/
+     - as default docker needs permission to run, lets add the user to docker group
+     - Terminal: sudo usermod -aG docker $USER
+     - Terminal: newgrp docker
+     - Now run again the hello-world without using sudo, this should work else logout and login the account.
+
+Sample docker container running in the bacground
+    - docker pull nginx -> this will pull nginx image on the docker repo
+    - docker run -d -p 8000:8080 nginx -> -d = run the container in the background without any interaction, -p = port, you can access the container through port 8000 and 8080 is port number inside the container.
+    - docker ps -> show running container
+    - docker stop <container_id> -> stopping the running container
+    
+8. Installing TMUX
