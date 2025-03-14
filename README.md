@@ -124,3 +124,21 @@ Sample docker container running in the bacground
     - docker stop <container_id> -> stopping the running container
     
 8. Installing TMUX
+    - Terminal: sudo dnf install tmux -y
+    - To start TMUX, simply run the command tmux,  for more command: https://tmuxcheatsheet.com/
+  
+9. Basic Automation
+    - Create update script
+    - Terminal: vim update.sh
+    - input the following and save:
+#!/bin/bash
+echo "UPDATING SYSTEM..."
+sudo dnf update -y
+echo "CLEANING UP..."
+sudo dnf clean all
+    - Change the file permission with execution
+    - Terminal: chmod +x update.sh
+    - Execute the script
+    - Terminal: ./update.sh
+10. 
+11. 
