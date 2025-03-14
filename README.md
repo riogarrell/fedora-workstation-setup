@@ -140,5 +140,9 @@ sudo dnf clean all
     - Terminal: chmod +x update.sh
     - Execute the script
     - Terminal: ./update.sh
-10. 
-11. 
+      
+10. Installing BTOP - System Monitoring tool
+    - Terminal: sudo dnf install btop -y
+    - Terminal: btop
+11.  
+12. 
