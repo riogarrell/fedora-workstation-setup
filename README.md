@@ -1,22 +1,27 @@
 # Fedora-Workstation-Setup
-# Things to do after installing fedora workstation
+> Things to do after installing fedora workstation
 
-1. Updating the System
-    -
-    * GUI: Window Key > Software > Updates
-    * Terminal: sudo dnf upgrade --refresh (Note: This cmd updates your system packages and refreshes the package metadata.)
-    * sudo dnf clean all
+## Updating the System
+- Terminal:
+```
+sudo dnf upgrade --refresh -y
+sudo dnf clean all
+sudo systemctl reboot
+```
+- GUI: Window Key > Software > Updates
+
   
-2. Installing NVIDIA driver
-    - 
-   
-3. Customizing your Desktop
-    -
-    * Installing COSMIC desktop environment on Fedora.
-    * https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/
-    * Terminal: dnf install @cosmic-desktop-environment
+## Installing NVIDIA driver
+- 
 
-4. Terminal Customization
+   
+## Customizing your Desktop
+-
+* Installing COSMIC desktop environment on Fedora.
+* https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/
+* Terminal: dnf install @cosmic-desktop-environment
+
+## Terminal Customization
     -
     * Installing ZSH
     * Terminal: sudo dnf install zsh -y
@@ -30,39 +35,37 @@
     * Reference: https://github.com/ohmyzsh/ohmyzsh
     * Terminal: sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
     
-5. Text Editor
-    -
-    * Installing VIM
-    * Terminal: sudo dnf install vim
-    * Open VIM: vim
+## Text Editor
+### Installing VIM
+* Terminal: sudo dnf install vim
+* Open VIM: vim
+
+* Customizing VIM
+* Terminal: vim ~/.vimsrc
+* Insert the following:
+* syntax on               " Enable syntax highlighting
+* set number              " Show line number
+* set relativenumber      " Show relative liine numbers
+* set tabstop=4           " Seet tab width to 4 spaces
+* set shiftwidth=4        " Use spaces instead of tabs
+* set cursorline          " Highlight the current line
+
+* VIM keys:
+* Insert Mode > Press i to start typing
+* Nomral Mode > Press Esc to exit insert mode
+* Save and Exit > Type :wq and press enter
+* Quit without Saving > Type :q! and press enter
+* Move to Start of Line > Press O
+* Move to End of Line > Press $
+* Delete Line > Press dd
+* Undo > Press u
+* Redo > Press Ctrl + r 
   
-    * Customizing VIM
-    * Terminal: vim ~/.vimsrc
-    * Insert the following:
-    * syntax on               " Enable syntax highlighting
-    * set number              " Show line number
-    * set relativenumber      " Show relative liine numbers
-    * set tabstop=4           " Seet tab width to 4 spaces
-    * set shiftwidth=4        " Use spaces instead of tabs
-    * set cursorline          " Highlight the current line
-  
-    * VIM keys:
-    * Insert Mode > Press i to start typing
-    * Nomral Mode > Press Esc to exit insert mode
-    * Save and Exit > Type :wq and press enter
-    * Quit without Saving > Type :q! and press enter
-    * Move to Start of Line > Press O
-    * Move to End of Line > Press $
-    * Delete Line > Press dd
-    * Undo > Press u
-    * Redo > Press Ctrl + r 
-  
-6. Installing VSCode
-    -
+### Installing VSCode
     - https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
     - Add the Snap for auto update in the background.
   
-7. Installing Git
+## Installing Git
     -
     - Terminal: sudo dnf install git -y
     - Verify Git
