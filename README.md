@@ -16,15 +16,34 @@ sudo systemctl reboot
 2. Disable Extra Boot Devices
     - System BIOS > BOOT Setting > Enable Fedora boot device only
 3. Determine GPU Model
-    - Open the terminal and do the command below.
-        - Desktop: `/sbin/lspci | grep -e VGA`
-        - Laptop: `/sbin/lspci | grep -e 3D`
+    - Terminal:
+    - Desktop
+    ```
+    /sbin/lspci | grep -e VGA
+    ```
+    - Laptop
+    ```
+    /sbin/lspci | grep -e 3D
+    ```
 4. Secure Boot and Kernel
-    - Open the terminal and do the following command below.
-        - Download the needed packages: `sudo dnf install kmodtool akmods mokutil openssl -y`
-        - Generate a driver key: `sudo kmodgenca -a` 
-        - Enroll the key to MOK: `sudo mokutil --import /etc/pki/akmods/certs/public_key.der` a prompt will ask you to create a password of the key to be use on MOK.
-        - Reboot the system: `sudo systemctl reboot`
+    - Terminal:
+    - Download the needed packages
+    ```
+    sudo dnf install kmodtool akmods mokutil openssl -y
+    ```
+    - Generate a driver key
+    ```
+    sudo kmodgenca -a
+    ``` 
+    - Enroll the key to MOK
+    ```
+    sudo mokutil --import /etc/pki/akmods/certs/public_key.der
+    ``` 
+    > a prompt will ask you to create a password of the key to be use on MOK.
+    - Reboot the system
+    ```
+    sudo systemctl reboot
+    ```
     - MOK Mode, follow the steps below:
         1. Enroll MOK
         2. Continue
@@ -41,9 +60,9 @@ sudo systemctl reboot
     > Note: If you encouter an error during the installation of cuda, reboot the system and try to install it again and reboot.
 
 6. Checking the Kernel Module
-```
-modinfo -F version nvidia
-```
+    ```
+    modinfo -F version nvidia
+    ```
    
 
 
@@ -58,22 +77,20 @@ dnf install @cosmic-desktop-environment
 
 ## Terminal Customization
 ### Installing ZSH
-- Open the terminal and do the command below:
-- Install zsh: 
+- Terminal:
+- Install zsh 
 ```
 sudo dnf install zsh -y
 ```
-- Status: Complete!
-- Change shell:
+- Change shell
 ```
 chsh -s $(which zsh)
 ```
-- Status: Change completed
 > Re-login account to take effect$ = bash | ~ = zsh
 
 
 ### Installing oh my zsh (install git first)
-- Open the terminal and do the command below:
+- Terminal:
 ```
 sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
 ```
@@ -83,6 +100,7 @@ sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
 
 ## Text Editor
 ### VIM
+- Terminal:
 - Installing vim 
 ```
 sudo dnf install vim
@@ -100,19 +118,21 @@ set tabstop=4           " Seet tab width to 4 spaces
 set shiftwidth=4        " Use spaces instead of tabs
 set cursorline          " Highlight the current line
 ```
-- VIM keys:
-    Insert Mode > Press i to start typing
-    Nomral Mode > Press Esc to exit insert mode
-    Save and Exit > Type :wq and press enter
-    Quit without Saving > Type :q! and press enter
-    Move to Start of Line > Press O
-    Move to End of Line > Press $
-    Delete Line > Press dd
-    Undo > Press u
-    Redo > Press Ctrl + r 
-  
+- VIM keys
+```
+Insert Mode > Press i to start typing
+Nomral Mode > Press Esc to exit insert mode
+Save and Exit > Type :wq and press enter
+Quit without Saving > Type :q! and press enter
+Move to Start of Line > Press O
+Move to End of Line > Press $
+Delete Line > Press dd
+Undo > Press u
+Redo > Press Ctrl + r 
+```
+
 ### Installing VSCode
-    - https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
+- https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
   
 
 ## Installing Git
