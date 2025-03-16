@@ -4,13 +4,17 @@ Things to do after installing fedora workstation
 1. Updating the system:
     - GUI: Window Key > Software > Updates
     - Terminal: sudo dnf upgrade --refresh (Note: This cmd updates your system packages and refreshes the package metadata.)
+    - sudo dnf clean all
   
-2. Customizing your Desktop:
+2. Installing NVIDIA driver
+    - 
+  
+3. Customizing your Desktop:
     - Installing COSMIC desktop environment on Fedora.
     - https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/
     - Terminal: dnf install @cosmic-desktop-environment
 
-3. Terminal Customization:
+4. Terminal Customization:
     - Installing ZSH
     - Terminal: sudo dnf install zsh -y
     - Status: Complete!
@@ -24,7 +28,7 @@ Things to do after installing fedora workstation
     - Terminal: sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
   
       
-4. Text Editor
+5. Text Editor
     - Installing VIM
     - Terminal: sudo dnf install vim
     - Open VIM: vim
@@ -52,11 +56,11 @@ Things to do after installing fedora workstation
   
     - 
   
-5. Installing VSCode
+6. Installing VSCode
     - https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
     - Add the Snap for auto update in the background.
   
-6. Installing Git
+7. Installing Git
     - Terminal: sudo dnf install git -y
     - Verify Git
     - Terminal: git --version
@@ -80,7 +84,7 @@ Things to do after installing fedora workstation
     - Prompt: Are you sure you want to continue connecting? yes
     - Status: You've successfully authenticated, but GitHub does not provide shell access.
 
-7. Installing Docker
+8. Installing Docker
     - Adding docker repo
     - Terminal: sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
     - Install docker
@@ -123,11 +127,11 @@ Sample docker container running in the bacground
     - docker ps -> show running container
     - docker stop <container_id> -> stopping the running container
     
-8. Installing TMUX
+9. Installing TMUX
     - Terminal: sudo dnf install tmux -y
     - To start TMUX, simply run the command tmux,  for more command: https://tmuxcheatsheet.com/
   
-9. Basic Automation
+10. Basic Automation
     - Create update script
     - Terminal: vim update.sh
     - input the following and save:
@@ -141,8 +145,16 @@ sudo dnf clean all
     - Execute the script
     - Terminal: ./update.sh
       
-10. Installing BTOP - System Monitoring tool
+11. Installing BTOP - System Monitoring tool
     - Terminal: sudo dnf install btop -y
     - Terminal: btop
-11.  
-12. 
+12.  
+
+## ISSUEs AND FIXES
+* User login password not matching the keyring -> This is usualy happened when opening an app asking for keyring/password.
+* Fix: Download "Passwords and Keys" on Fedora Software Downloader > Open and Check the Default keyring if available, if none lets proceeed on terminal.
+* Termminal:
+* cd ~/.local/share/keyrings
+* ls -> you will see a login.keyring file, and lets remove it using this cmd -> rm login.keyring
+* Once remove, try to open the app and it will ask a new keyring/password; you can put a password or simple leave it blank.
+* Now check the Passwords and Keys, you will see a Default keyring.
