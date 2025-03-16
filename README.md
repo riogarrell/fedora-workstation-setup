@@ -39,46 +39,67 @@ sudo systemctl reboot
     systemctl reboot
     ```
     > Note: If you encouter an error during the installation of cuda, reboot the system and try to install it again and reboot.
+
+6. Checking the Kernel Module
+```
+modinfo -F version nvidia
+```
    
+
 
 ## Customizing your Desktop
 - Installing COSMIC desktop environment on Fedora.
-- Terminal: `dnf install @cosmic-desktop-environment`
+```
+dnf install @cosmic-desktop-environment
+```
 - Source: https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/
+
 
 
 ## Terminal Customization
 ### Installing ZSH
 - Open the terminal and do the command below:
 - Install zsh: 
-`sudo dnf install zsh -y`
-- status: Complete!
-- change shell:
-`chsh -s $(which zsh)`
-- status: Change completed
-> Re-login account to take effect
-> Note: $ = bash | ~ = zsh
+```
+sudo dnf install zsh -y
+```
+- Status: Complete!
+- Change shell:
+```
+chsh -s $(which zsh)
+```
+- Status: Change completed
+> Re-login account to take effect$ = bash | ~ = zsh
+
 
 ### Installing oh my zsh (install git first)
 - Open the terminal and do the command below:
-`sh -c "$(curl -fsSL https://install.ohmyz.sh/)"`
+```
+sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
+```
 > Reference: https://github.com/ohmyzsh/ohmyzsh
     
+
+
 ## Text Editor
 ### VIM
 - Installing vim 
-`sudo dnf install vim`
-
+```
+sudo dnf install vim
+```
 - Customizing vim
-`vim ~/.vimsrc`
- Input the following script:
-    syntax on               " Enable syntax highlighting
-    set number              " Show line number
-    set relativenumber      " Show relative liine numbers
-    set tabstop=4           " Seet tab width to 4 spaces
-    set shiftwidth=4        " Use spaces instead of tabs
-    set cursorline          " Highlight the current line
-
+```
+vim ~/.vimsrc
+```
+- Input the following script:
+```
+syntax on               " Enable syntax highlighting
+set number              " Show line number
+set relativenumber      " Show relative liine numbers
+set tabstop=4           " Seet tab width to 4 spaces
+set shiftwidth=4        " Use spaces instead of tabs
+set cursorline          " Highlight the current line
+```
 - VIM keys:
     Insert Mode > Press i to start typing
     Nomral Mode > Press Esc to exit insert mode
@@ -92,36 +113,50 @@ sudo systemctl reboot
   
 ### Installing VSCode
     - https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
-    - Add the Snap for auto update in the background.
   
+
 ## Installing Git
-    -
-    - Terminal: sudo dnf install git -y
+1. Install git
+    - Open the terminal and follow the command below:
+    ```
+    sudo dnf install git -y
+    ```
     - Verify Git
-    - Terminal: git --version
+    ```
+    git --version
+    ```
     - Set the git name and email
-    - Terminal: git config --global user.name <name>
-    - Terminal: git confiig --global user.email <email@>
+    ```
+    git config --global user.name <name>
+    git confiig --global user.email <email@>
+    ```
     - View git config
-    - Terminal: git config --list
-    - Check directory to confirm it is the local git repo (you will see .git)
-    - Terminal: ls -la
-  
-    - Setup github and gitlab
-    - generate ssh keygen
-    - Terminal: ssh-keygen -C <email@>
-    - Note: It will ask to set location and password, press enter to save it on default
+    ```
+    git config --list
+    ```
+2. Setup github and gitlab
+    - Open the terminal and follow the command below:
+    - Generate ssh keygen
+    ```
+    ssh-keygen -C <email@>
+    ```
+    > Note: It will ask to set location and password, press enter to save it on default
     - Copy the generated pub key
-    - Terminal: cat ~/.ssh/id_ed*****.pub
-    - Open Github > Settings > SSH and GPG Keys > New > Save
+    ```
+    cat ~/.ssh/id_ed*****.pub
+    ```
+    - Open Github > Settings > SSH and GPG Keys > New > Paste the key > Save
     - Verify the gihub connection
-    - Terminal: ssh -T git@github.com
-    - Prompt: Are you sure you want to continue connecting? yes
-    - Status: You've successfully authenticated, but GitHub does not provide shell access.
+    ```
+    ssh -T git@github.com
+    Are you sure you want to continue connecting? yes
+    You've successfully authenticated, but GitHub does not provide shell access.
+    ```
+    
+
 
 8. Installing Docker
-    -
-    -  Adding docker repo
+    - Adding docker repo
     - Terminal: sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
     - Install docker
     - Terminal: sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
@@ -132,7 +167,6 @@ sudo systemctl reboot
     - Start docker
     - Terminal: sudo systemctl start docker
     - sudo docker run hello-world
-    - 
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
