@@ -12,9 +12,33 @@ sudo systemctl reboot
 
   
 ## Installing NVIDIA driver
-- 
+1. System Update
+2. Disable extra boot devices
+    - System BIOS > BOOT Setting > Enable Fedora boot device only.
+3. Determine GPU Model
+    - Desktop: `/sbin/lspci | grep -e VGA`
+    - Laptop: `/sbin/lspci | grep -e 3D`
+4. Secure Boot and Kernel
+    - Download needed packages `sudo dnf install kmodtool akmods mokutil openssl -y`
+    - Generate driver key `sudo kmodgenca -a` 
+    - Enroll the key to MOK `sudo mokutil --import /etc/pki/akmods/certs/public_key.der` a prompt will ask you to create a password of the key to be use on MOK.
+    - Reboot the system `sudo systemctl reboot`
+    - System will be booted on MOK mode
+        1. Enroll MOK
+        2. Continue
+        3. Confirm the enrollment by selecting Yes
+        4. Enter the password that we create earlier
+        5. Reboot
 
+5. Installing Nvidia Driver
+    ```
+    sudo dnf install akmod-nvidia -y
+    sudo dnf install xorg-x11-drv-nvidia-cuda -y
+    systemctl reboot
+    ```
+    > Note: If encoutered an error during the installation of cuda, reboot the system and try to install it again and reboot.
    
+
 ## Customizing your Desktop
 -
 * Installing COSMIC desktop environment on Fedora.
