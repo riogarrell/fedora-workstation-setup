@@ -13,17 +13,19 @@ sudo systemctl reboot
   
 ## Installing NVIDIA driver
 1. System Update
-2. Disable extra boot devices
-    - System BIOS > BOOT Setting > Enable Fedora boot device only.
+2. Disable Extra Boot Devices
+    - System BIOS > BOOT Setting > Enable Fedora boot device only
 3. Determine GPU Model
-    - Desktop: `/sbin/lspci | grep -e VGA`
-    - Laptop: `/sbin/lspci | grep -e 3D`
+    - Open the terminal and do the command below.
+        - Desktop: `/sbin/lspci | grep -e VGA`
+        - Laptop: `/sbin/lspci | grep -e 3D`
 4. Secure Boot and Kernel
-    - Download needed packages `sudo dnf install kmodtool akmods mokutil openssl -y`
-    - Generate driver key `sudo kmodgenca -a` 
-    - Enroll the key to MOK `sudo mokutil --import /etc/pki/akmods/certs/public_key.der` a prompt will ask you to create a password of the key to be use on MOK.
-    - Reboot the system `sudo systemctl reboot`
-    - System will be booted on MOK mode
+    - Open the terminal and do the following command below.
+        - Download the needed packages: `sudo dnf install kmodtool akmods mokutil openssl -y`
+        - Generate a driver key: `sudo kmodgenca -a` 
+        - Enroll the key to MOK: `sudo mokutil --import /etc/pki/akmods/certs/public_key.der` a prompt will ask you to create a password of the key to be use on MOK.
+        - Reboot the system: `sudo systemctl reboot`
+    - MOK Mode, follow the steps below:
         1. Enroll MOK
         2. Continue
         3. Confirm the enrollment by selecting Yes
@@ -36,54 +38,57 @@ sudo systemctl reboot
     sudo dnf install xorg-x11-drv-nvidia-cuda -y
     systemctl reboot
     ```
-    > Note: If encoutered an error during the installation of cuda, reboot the system and try to install it again and reboot.
+    > Note: If you encouter an error during the installation of cuda, reboot the system and try to install it again and reboot.
    
 
 ## Customizing your Desktop
--
-* Installing COSMIC desktop environment on Fedora.
-* https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/
-* Terminal: dnf install @cosmic-desktop-environment
+- Installing COSMIC desktop environment on Fedora.
+- Terminal: `dnf install @cosmic-desktop-environment`
+- Source: https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/
+
 
 ## Terminal Customization
-    -
-    * Installing ZSH
-    * Terminal: sudo dnf install zsh -y
-    * Status: Complete!
-    * Change Shell: chsh -s $(which zsh)
-    * Status: Change completed
-    * Logout and Login account to take effect
-    * Note: $ = bash | ~ = zsh
-  
-    * Installing oh my zsh (install Git first check #6)
-    * Reference: https://github.com/ohmyzsh/ohmyzsh
-    * Terminal: sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
+### Installing ZSH
+- Open the terminal and do the command below:
+- Install zsh: 
+`sudo dnf install zsh -y`
+- status: Complete!
+- change shell:
+`chsh -s $(which zsh)`
+- status: Change completed
+> Re-login account to take effect
+> Note: $ = bash | ~ = zsh
+
+### Installing oh my zsh (install git first)
+- Open the terminal and do the command below:
+`sh -c "$(curl -fsSL https://install.ohmyz.sh/)"`
+> Reference: https://github.com/ohmyzsh/ohmyzsh
     
 ## Text Editor
-### Installing VIM
-* Terminal: sudo dnf install vim
-* Open VIM: vim
+### VIM
+- Installing vim 
+`sudo dnf install vim`
 
-* Customizing VIM
-* Terminal: vim ~/.vimsrc
-* Insert the following:
-* syntax on               " Enable syntax highlighting
-* set number              " Show line number
-* set relativenumber      " Show relative liine numbers
-* set tabstop=4           " Seet tab width to 4 spaces
-* set shiftwidth=4        " Use spaces instead of tabs
-* set cursorline          " Highlight the current line
+- Customizing vim
+`vim ~/.vimsrc`
+ Input the following script:
+    syntax on               " Enable syntax highlighting
+    set number              " Show line number
+    set relativenumber      " Show relative liine numbers
+    set tabstop=4           " Seet tab width to 4 spaces
+    set shiftwidth=4        " Use spaces instead of tabs
+    set cursorline          " Highlight the current line
 
-* VIM keys:
-* Insert Mode > Press i to start typing
-* Nomral Mode > Press Esc to exit insert mode
-* Save and Exit > Type :wq and press enter
-* Quit without Saving > Type :q! and press enter
-* Move to Start of Line > Press O
-* Move to End of Line > Press $
-* Delete Line > Press dd
-* Undo > Press u
-* Redo > Press Ctrl + r 
+- VIM keys:
+    Insert Mode > Press i to start typing
+    Nomral Mode > Press Esc to exit insert mode
+    Save and Exit > Type :wq and press enter
+    Quit without Saving > Type :q! and press enter
+    Move to Start of Line > Press O
+    Move to End of Line > Press $
+    Delete Line > Press dd
+    Undo > Press u
+    Redo > Press Ctrl + r 
   
 ### Installing VSCode
     - https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
