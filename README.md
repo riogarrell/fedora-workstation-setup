@@ -1,66 +1,69 @@
-# fedora-workstation-setup
-Things to do after installing fedora workstation
+# Fedora-Workstation-Setup
+# Things to do after installing fedora workstation
 
-1. Updating the system:
-    - GUI: Window Key > Software > Updates
-    - Terminal: sudo dnf upgrade --refresh (Note: This cmd updates your system packages and refreshes the package metadata.)
-    - sudo dnf clean all
+1. Updating the System
+    -
+    * GUI: Window Key > Software > Updates
+    * Terminal: sudo dnf upgrade --refresh (Note: This cmd updates your system packages and refreshes the package metadata.)
+    * sudo dnf clean all
   
 2. Installing NVIDIA driver
     - 
-  
-3. Customizing your Desktop:
-    - Installing COSMIC desktop environment on Fedora.
-    - https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/
-    - Terminal: dnf install @cosmic-desktop-environment
+   
+3. Customizing your Desktop
+    -
+    * Installing COSMIC desktop environment on Fedora.
+    * https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/
+    * Terminal: dnf install @cosmic-desktop-environment
 
-4. Terminal Customization:
-    - Installing ZSH
-    - Terminal: sudo dnf install zsh -y
-    - Status: Complete!
-    - Change Shell: chsh -s $(which zsh)
-    - Status: Change completed
-    - Logout and Login account to take effect
-    - Note: $ = bash | ~ = zsh
+4. Terminal Customization
+    -
+    * Installing ZSH
+    * Terminal: sudo dnf install zsh -y
+    * Status: Complete!
+    * Change Shell: chsh -s $(which zsh)
+    * Status: Change completed
+    * Logout and Login account to take effect
+    * Note: $ = bash | ~ = zsh
   
-    - Installing oh my zsh (install Git first check #6)
-    - Reference: https://github.com/ohmyzsh/ohmyzsh
-    - Terminal: sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
-  
-      
+    * Installing oh my zsh (install Git first check #6)
+    * Reference: https://github.com/ohmyzsh/ohmyzsh
+    * Terminal: sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
+    
 5. Text Editor
-    - Installing VIM
-    - Terminal: sudo dnf install vim
-    - Open VIM: vim
+    -
+    * Installing VIM
+    * Terminal: sudo dnf install vim
+    * Open VIM: vim
   
-    - Customizing VIM
-    - Terminal: vim ~/.vimsrc
-    - Insert the following:
-    - syntax on               " Enable syntax highlighting
-    - set number              " Show line number
-    - set relativenumber      " Show relative liine numbers
-    - set tabstop=4           " Seet tab width to 4 spaces
-    - set shiftwidth=4        " Use spaces instead of tabs
-    - set cursorline          " Highlight the current line
+    * Customizing VIM
+    * Terminal: vim ~/.vimsrc
+    * Insert the following:
+    * syntax on               " Enable syntax highlighting
+    * set number              " Show line number
+    * set relativenumber      " Show relative liine numbers
+    * set tabstop=4           " Seet tab width to 4 spaces
+    * set shiftwidth=4        " Use spaces instead of tabs
+    * set cursorline          " Highlight the current line
   
-    - VIM keys:
-    - Insert Mode > Press i to start typing
-    - Nomral Mode > Press Esc to exit insert mode
-    - Save and Exit > Type :wq and press enter
-    - Quit without Saving > Type :q! and press enter
-    - Move to Start of Line > Press O
-    - Move to End of Line > Press $
-    - Delete Line > Press dd
-    - Undo > Press u
-    - Redo > Press Ctrl + r
-  
-    - 
+    * VIM keys:
+    * Insert Mode > Press i to start typing
+    * Nomral Mode > Press Esc to exit insert mode
+    * Save and Exit > Type :wq and press enter
+    * Quit without Saving > Type :q! and press enter
+    * Move to Start of Line > Press O
+    * Move to End of Line > Press $
+    * Delete Line > Press dd
+    * Undo > Press u
+    * Redo > Press Ctrl + r 
   
 6. Installing VSCode
+    -
     - https://code.visualstudio.com/docs/setup/linux#_rhel-fedora-and-centos-based-distributions
     - Add the Snap for auto update in the background.
   
 7. Installing Git
+    -
     - Terminal: sudo dnf install git -y
     - Verify Git
     - Terminal: git --version
@@ -85,7 +88,8 @@ Things to do after installing fedora workstation
     - Status: You've successfully authenticated, but GitHub does not provide shell access.
 
 8. Installing Docker
-    - Adding docker repo
+    -
+    -  Adding docker repo
     - Terminal: sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
     - Install docker
     - Terminal: sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
@@ -96,7 +100,7 @@ Things to do after installing fedora workstation
     - Start docker
     - Terminal: sudo systemctl start docker
     - sudo docker run hello-world
-
+    - 
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
@@ -126,13 +130,16 @@ Sample docker container running in the bacground
     - docker run -d -p 8000:8080 nginx -> -d = run the container in the background without any interaction, -p = port, you can access the container through port 8000 and 8080 is port number inside the container.
     - docker ps -> show running container
     - docker stop <container_id> -> stopping the running container
+    -
     
 9. Installing TMUX
-    - Terminal: sudo dnf install tmux -y
+    -
+    -  Terminal: sudo dnf install tmux -y
     - To start TMUX, simply run the command tmux,  for more command: https://tmuxcheatsheet.com/
   
 10. Basic Automation
-    - Create update script
+    -
+    -  Create update script
     - Terminal: vim update.sh
     - input the following and save:
 #!/bin/bash
@@ -146,8 +153,11 @@ sudo dnf clean all
     - Terminal: ./update.sh
       
 11. Installing BTOP - System Monitoring tool
+    -
     - Terminal: sudo dnf install btop -y
     - Terminal: btop
+    - 
+
 12.  
 
 ## ISSUEs AND FIXES
