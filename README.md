@@ -84,9 +84,10 @@ sudo dnf install zsh -y
 ```
 - Change shell
 ```
-chsh -s $(which zsh)
+sudo chsh $USER
 ```
-> Re-login account to take effect$ = bash | ~ = zsh
+> Re-login account to take effect ~$ = bash | ~% = zsh
+- Source: https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
 
 
 ### Installing oh my zsh (install git first)
