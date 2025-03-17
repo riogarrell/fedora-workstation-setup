@@ -93,9 +93,9 @@ sudo chsh $USER
 ### Installing oh my zsh (install git first)
 - Terminal:
 ```
-sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-> Reference: https://github.com/ohmyzsh/ohmyzsh
+> Reference: [https://github.com/ohmyzsh/ohmyzsh](https://ohmyz.sh/#install) [Documentation](https://github.com/ohmyzsh/ohmyzsh/wiki) [Auto Complete Plugins](https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df)
     
 
 
