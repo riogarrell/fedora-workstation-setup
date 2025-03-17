@@ -95,7 +95,7 @@ sudo chsh $USER
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-> Reference: [https://github.com/ohmyzsh/ohmyzsh](https://ohmyz.sh/#install) [Documentation](https://github.com/ohmyzsh/ohmyzsh/wiki) [Auto Complete Plugins](https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df)
+> Reference: [https://github.com/ohmyzsh/ohmyzsh](https://ohmyz.sh/#install) [Documentation](https://github.com/ohmyzsh/ohmyzsh/wiki) [Auto Complete Plugins](https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df) | re-open the terminal and type ps ax you will notice auto completion and suggestions
     
 
 
