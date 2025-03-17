@@ -282,7 +282,20 @@ chmod +x update.sh
 sudo dnf install btop -y
 btop
 ``` 
-  
+
+
+## Adding Binary to Home Directory
+- Terminal:
+  ```
+  cd
+  mkdir bin
+  vi ~/.zshrc
+  export PATH=$PATH:$HOME/bin
+  :wq
+  mv <path of the binary like ansible eg: ~/Downloads/ansible> bin
+  . ./.zshrc
+  ansible
+  ```
 
 ## ISSUEs AND FIXES
 * User login password not matching the keyring -> This is usualy happened when opening an app asking for keyring/password.
