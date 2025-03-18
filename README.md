@@ -82,12 +82,16 @@ dnf install @cosmic-desktop-environment
 ```
 sudo dnf install zsh -y
 ```
+- Verify zsh
+```
+zsh --version
+```
+> Re-login account to take effect ~$ = bash | ~% = zsh
 - Change shell
 ```
 sudo chsh $USER
 ```
-> Re-login account to take effect ~$ = bash | ~% = zsh
-- Source: https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+- Source: [Installing ZSH](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
 
 
 ### Installing oh my zsh (install git first)
