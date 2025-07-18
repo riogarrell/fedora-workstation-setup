@@ -165,7 +165,7 @@ Redo > Press Ctrl + r
     ```
     ssh-keygen -C <email@>
     ```
-    > Note: It will ask to set location and password, press enter to save it on default
+    > Note: It will ask to set location and password, press enter to save it on default (e.g: /home/username/.ssh/id_ed***)
     - Copy the generated pub key
     ```
     cat ~/.ssh/id_ed*****.pub
