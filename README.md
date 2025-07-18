@@ -10,70 +10,11 @@ sudo systemctl reboot
 ```
 - GUI: Window Key > Software > Updates
 
-  
-## Installing NVIDIA driver
-1. System Update
-2. Disable Extra Boot Devices
-    - System BIOS > BOOT Setting > Enable Fedora boot device only
-3. Determine GPU Model
-    - Terminal:
-    - Desktop
-    ```
-    /sbin/lspci | grep -e VGA
-    ```
-    - Laptop
-    ```
-    /sbin/lspci | grep -e 3D
-    ```
-4. Secure Boot and Kernel
-    - Terminal:
-    - Download the needed packages
-    ```
-    sudo dnf install kmodtool akmods mokutil openssl -y
-    ```
-    - Generate a driver key
-    ```
-    sudo kmodgenca -a
-    ``` 
-    - Enroll the key to MOK
-    ```
-    sudo mokutil --import /etc/pki/akmods/certs/public_key.der
-    ``` 
-    > a prompt will ask you to create a password of the key to be use on MOK.
-    - Reboot the system
-    ```
-    sudo systemctl reboot
-    ```
-    - MOK Mode, follow the steps below:
-        1. Enroll MOK
-        2. Continue
-        3. Confirm the enrollment by selecting Yes
-        4. Enter the password that we create earlier
-        5. Reboot
-
-5. Installing Nvidia Driver
-    ```
-    sudo dnf install akmod-nvidia -y
-    sudo dnf install xorg-x11-drv-nvidia-cuda -y
-    systemctl reboot
-    ```
-    > Note: If you encouter an error during the installation of cuda, reboot the system and try to install it again and reboot.
-
-6. Checking the Kernel Module
-    ```
-    modinfo -F version nvidia
-    ```
-   
-
-
-## Customizing your Desktop
-- Installing COSMIC desktop environment on Fedora.
+## Getting System & Hardware Information
+- Terminal:
 ```
-dnf install @cosmic-desktop-environment
+fastfetch
 ```
-- Source: https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/
-
-
 
 ## Terminal Customization
 ### Installing ZSH
