@@ -195,6 +195,15 @@ For more examples and ideas, visit: https://docs.docker.com/get-started/
     - Terminal: newgrp docker
     - Now run again the hello-world without using sudo, this should work else logout and login the account.
 ```
+- Allow Runnig docker without sudo
+- Add your user to the docker group:
+```
+sudo usermod -aG docker $USER
+```
+- Log out and log back in to apply the group changes, or run:
+```
+newgrp docker
+```
 
 - Sample docker container running in the bacground:
 - Get nginx image on docker repo
