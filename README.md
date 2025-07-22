@@ -118,7 +118,32 @@ Redo > Press Ctrl + r
     Are you sure you want to continue connecting? yes
     You've successfully authenticated, but GitHub does not provide shell access.
     ```
-    
+
+## Installing JDK
+- Download the Java Version here [Oracle](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- Extract the JDK:
+```
+sudo extract tar -xvzf ~/Downloads/jdk-17_linux-x64_bin.tar.gz -C /opt/
+```
+- Set the alternatives for JDK:
+```
+sudo alternatives --install /usr/bin/java java /opt/jdk-17/bin/java 1
+sudo alternatives --install /usr/bin/javac javac /opt/jdk-17/bin/javac 1
+```
+- To see the JDK list:
+```
+sudo alternatives --display java
+```
+- To switch between JDK versions:
+```
+sudo alternatives --config java
+sudo alternatives --config javac
+```
+- Removing JDK on the alternatives list
+```
+sudo alternatives --remove java /usr/lib/jvm/java-17-openjdk/bin/java
+```
+> Note: If you are not sure which path to remove, execute the alternative --list command first.
 
 
 ## Installing Docker
